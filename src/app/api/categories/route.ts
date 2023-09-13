@@ -1,9 +1,8 @@
-import {NextResponse} from "next/server";
-import {getBlogContent} from "@/app/api/getBlogContent";
+import { NextResponse } from 'next/server'
+import { getBlogContent } from '@/app/api/getBlogContent'
 
 export async function GET() {
+    const { categories } = await getBlogContent()
 
-    const { categories } = await getBlogContent();
-
-    return NextResponse.json(categories);
+    return NextResponse.json(categories)
 }
